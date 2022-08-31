@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 
-    public GameObject rb;
+    
 {
+
+    private Rigidbody2D rb;
+
+
     // Start is called before the first frame update
     void Start()
     {
 
-        rb = gameObject.GetComponent("RigidBody2D");
+        rb = gameObject.GetComponent<Rigidbody2D>();
         
     }
 
