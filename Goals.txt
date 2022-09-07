@@ -1,0 +1,17 @@
+Game: Fresh Bird
+Description:
+	-Player controls a bird to each nest to lay egg and hatch and Start Fresh.
+Features:
+	-Bird Movement:
+		-4 Direction
+		-Astroid Type Movement
+		+Drag & Gravity
+	-Background Parallax
+	-2D Scrolling Obstacles
+		-Walls
+		-Birds
+		+Procedural Generated
+		+Power Ups
+	-Reach the Nest to Lay Egg
+		-Shift palette
+		-Start from there
