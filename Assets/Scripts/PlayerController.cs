@@ -5,7 +5,7 @@ using System;
 
 public class PlayerController : MonoBehaviour
 
-    
+
 {
 
     private Rigidbody2D rb;
@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     string colorString;
 
+    public Sprite Two;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,7 @@ public class PlayerController : MonoBehaviour
         colorString = "" + colorNum;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = Two;
 
-        
+
     }
 
     // Update is called once per frame
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
     }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
