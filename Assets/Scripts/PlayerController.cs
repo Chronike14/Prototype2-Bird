@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 
@@ -13,12 +14,21 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movement;
 
+    System.Random randColor = new System.Random();
+
+    int colorNum;
+
+    string colorString;
 
     // Start is called before the first frame update
     void Start()
     {
 
         rb = gameObject.GetComponent<Rigidbody2D>();
+        colorNum = randColor.Next();
+        colorString = "" + colorNum;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = Two;
+
         
     }
 
