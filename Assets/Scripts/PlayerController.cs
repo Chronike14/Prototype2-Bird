@@ -15,6 +15,13 @@ public class PlayerController : MonoBehaviour
     Vector2 movement;
 
     System.Random randColor = new System.Random();
+    System.Random randSize = new System.Random();
+    int randX;
+    int randY;
+    int randZ;
+    System.Random randSpeedNum = new System.Random();
+    int randSpeed;
+
 
     int colorNum;
 
@@ -39,6 +46,9 @@ public class PlayerController : MonoBehaviour
     public Sprite Fivteen;
     public Sprite Sixteen;
 
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +56,15 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         RandColor();
 
+        randX = randSize.Next(2, 7);
+        randY = randSize.Next(2, 7);
+        randZ = randSize.Next(2, 7);
+
+        rb.gameObject.transform.localScale = new Vector3(randX, randY, randZ);
+
+        randSpeed = randSpeedNum.Next(2, 10);
+
+        moveSpeed = randSpeed;
 
     }
 
