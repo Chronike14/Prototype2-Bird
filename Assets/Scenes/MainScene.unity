@@ -223,7 +223,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  One: {fileID: 21300000, guid: 4bbfab84f24a3b34696610770572ecbf, type: 3}
   Two: {fileID: 21300000, guid: 3719fbf82be0a05468c698a99b4e5392, type: 3}
+  Three: {fileID: 21300000, guid: 861f2709699841b4ea7146a07552354a, type: 3}
+  Four: {fileID: 21300000, guid: c75b157e0e35c2345aa887ab39882bd4, type: 3}
+  Five: {fileID: 21300000, guid: 5cedd941191826c4d8d01d98e89e7607, type: 3}
+  Six: {fileID: 21300000, guid: f5d75f37096ba2a48b52a0604751dc4a, type: 3}
+  Seven: {fileID: 21300000, guid: ac413595e2851454eabd313700cf606a, type: 3}
+  Eight: {fileID: 21300000, guid: 70803d10da1a73846884de94ca30b3e2, type: 3}
+  Nine: {fileID: 21300000, guid: e8554788132afba4e953916d7bf4b17e, type: 3}
+  Ten: {fileID: 21300000, guid: a912d84aacdea83409317ee9bfd9c1bf, type: 3}
+  Eleven: {fileID: 21300000, guid: 5ae955d93e8fb2b4d85f063d8537c5f6, type: 3}
+  Twelve: {fileID: 21300000, guid: 20b1934e19e0ca84887779d5f0c89974, type: 3}
+  Thirteen: {fileID: 21300000, guid: fe1e93429e0d3ae49ad9560c3f083fb2, type: 3}
+  Fourteen: {fileID: 21300000, guid: 7c5d81f77ebafe34d91acbd0986a0906, type: 3}
+  Fivteen: {fileID: 21300000, guid: e93409a9f3915d44ca9c24b286562561, type: 3}
+  Sixteen: {fileID: 21300000, guid: 2d4f0f799907411418f78632be8966ee, type: 3}
 --- !u!50 &740867846
 Rigidbody2D:
   serializedVersion: 4
