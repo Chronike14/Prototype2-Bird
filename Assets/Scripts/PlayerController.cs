@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    public Sprite 1;
+    public Sprite One;
     public Sprite Two;
     public Sprite Three;
     public Sprite Four;
