@@ -689,7 +689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs:
   - {fileID: 4208507500049338784, guid: a89250a53195ab74ea3de8ad3863fa7b, type: 3}
-  - {fileID: 0}
+  - {fileID: 4208507500049338784, guid: 150c5f16ec71d9f4e81332c3d33a2eea, type: 3}
+  - {fileID: 4208507500049338784, guid: a5dd5d818794c9248b35d6b9882ccfdb, type: 3}
 --- !u!4 &677456724
 Transform:
   m_ObjectHideFlags: 0
@@ -869,15 +870,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24, y: 0.16406901}
   m_EdgeRadius: 0
-
 --- !u!114 &740867848
 MonoBehaviour:
-
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-
   m_GameObject: {fileID: 740867842}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -885,7 +883,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 1172332972}
-
 --- !u!1 &1030200848
 GameObject:
   m_ObjectHideFlags: 0
