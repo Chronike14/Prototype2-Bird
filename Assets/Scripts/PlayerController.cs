@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         randY = randSize.Next(randX - 2, randX + 2);
         randZ = randSize.Next(randX - 2 , randX + 2);
 
-        rb.gameObject.transform.localScale = new Vector3(randX, randY, randZ);
+        rb.gameObject.transform.localScale = new Vector3(randX, randY, 0);
 
         randSpeed = randSpeedNum.Next(4, 10);
 
@@ -149,11 +149,12 @@ public class PlayerController : MonoBehaviour
         rb.gameObject.transform.localScale = new Vector3(5, 5, 5);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Tree")
+        if (other.gameObject.CompareTag("Tree"))
         {
             becomeEgg();
+            print("hey");
         }
     }
 
