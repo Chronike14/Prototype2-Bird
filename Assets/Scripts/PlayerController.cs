@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using CameraController;
 
 public class PlayerController : MonoBehaviour
 
@@ -140,6 +141,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
