@@ -1118,6 +1118,8 @@ MonoBehaviour:
   Fourteen: {fileID: 21300000, guid: 7c5d81f77ebafe34d91acbd0986a0906, type: 3}
   Fivteen: {fileID: 21300000, guid: e93409a9f3915d44ca9c24b286562561, type: 3}
   Sixteen: {fileID: 21300000, guid: 2d4f0f799907411418f78632be8966ee, type: 3}
+  Egg: {fileID: 21300000, guid: 2297bbf6d7bb9fd46af8808c8a53d7ca, type: 3}
+  isEgg: 0
 --- !u!50 &740867846
 Rigidbody2D:
   serializedVersion: 4
