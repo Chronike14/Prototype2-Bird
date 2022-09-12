@@ -59,9 +59,9 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         RandColor();
 
-        randX = randSize.Next(2, 7);
-        randY = randSize.Next(2, 7);
-        randZ = randSize.Next(2, 7);
+        randX = randSize.Next(4, 11);
+        randY = randSize.Next(randX - 2, randX + 2);
+        randZ = randSize.Next(randX - 2 , randX + 2);
 
         rb.gameObject.transform.localScale = new Vector3(randX, randY, randZ);
 
@@ -147,6 +147,14 @@ public class PlayerController : MonoBehaviour
         isEgg = true;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = Egg;
         rb.gameObject.transform.localScale = new Vector3(5, 5, 5);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Tree")
+        {
+            becomeEgg();
+        }
     }
 
     // Update is called once per frame
