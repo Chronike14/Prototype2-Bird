@@ -47,7 +47,9 @@ public class PlayerController : MonoBehaviour
     public Sprite Fivteen;
     public Sprite Sixteen;
 
+    public Sprite Egg;
 
+    public bool isEgg;
     
 
     // Start is called before the first frame update
@@ -63,9 +65,11 @@ public class PlayerController : MonoBehaviour
 
         rb.gameObject.transform.localScale = new Vector3(randX, randY, randZ);
 
-        randSpeed = randSpeedNum.Next(2, 10);
+        randSpeed = randSpeedNum.Next(4, 10);
 
         moveSpeed = randSpeed;
+
+        isEgg = false;
 
     }
 
@@ -138,17 +142,37 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void becomeEgg() 
+    {
+        isEgg = true;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = Egg;
+        rb.gameObject.transform.localScale = new Vector3(5, 5, 5);
+    }
+
     // Update is called once per frame
     void Update()
     {
     
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+            print("Escape");
+        }
 
+        if (Input.GetKey("space")) 
+        {
+            becomeEgg();
+        }
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if(isEgg == false) 
+        {
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
+        
     }
 }
