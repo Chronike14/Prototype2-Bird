@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5799377191695171204}
   - component: {fileID: 2679837835355002858}
   - component: {fileID: 9049128550787535676}
+  - component: {fileID: -319184789696044611}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -121,7 +122,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2270728355618460660}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -146,3 +147,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc62d61e55bd2d4c845942429304018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-319184789696044611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270728355618460660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5d7c7d3ce8a2e41a488a3dcd257e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  randSpeedNum: 0
