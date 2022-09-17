@@ -5,24 +5,30 @@ using UnityEngine;
 public class Boundaries : MonoBehaviour
 {
     public Camera MainCamera;
-    private Vector2 screenBounds;
+    private Rect screenBounds;
     private float objectWidth;
     private float objectHeight;
 
-    // Start is called before the first frame update
     void Start()
     {
-        screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
+        float cameraHeight = MainCamera.orthographicSize * 2;
+        float cameraWidth = cameraHeight * MainCamera.aspect;
+        Vector2 cameraSize = new Vector2(cameraWidth, cameraHeight);
+        Vector2 cameraCenterPosition = MainCamera.transform.position;
+        Vector2 cameraBottomLeftPosition = cameraCenterPosition - (cameraSize / 2);
+        screenBounds = new Rect(cameraBottomLeftPosition, cameraSize);
         objectWidth = transform.GetComponent<SpriteRenderer>().bounds.extents.x;
         objectHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
     }
-
-    // LateUpdate is called after the Movement Script
+    void Update()
+    {
+        screenBounds.position = (Vector2)MainCamera.transform.position - (screenBounds.size / 2);
+    }
     void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
-        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x + objectWidth, screenBounds.x + screenBounds.width - objectWidth);
+        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y + objectHeight, screenBounds.y + screenBounds.height - objectHeight);
         transform.position = viewPos;
     }
 }

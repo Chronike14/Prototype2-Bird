@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using CameraController;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 
@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-
-    public float moveSpeed = 5f;
+    private float camSpeed = 5.0f;
+    public float moveSpeed = 5.0f;
 
     Vector2 movement;
 
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         randSpeed = randSpeedNum.Next(4, 10);
 
-        moveSpeed = randSpeed;
+        moveSpeed = randSpeed + camSpeed;
 
         isEgg = false;
 
@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour
         isEgg = true;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = Egg;
         rb.gameObject.transform.localScale = new Vector3(5, 5, 5);
+        Time.timeScale = 0;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -161,7 +162,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         if (Input.GetKey("escape"))
@@ -170,9 +170,19 @@ public class PlayerController : MonoBehaviour
             print("Escape");
         }
 
-        if (Input.GetKey("space")) 
+        if (Input.GetKeyDown("space")) 
         {
-            becomeEgg();
+            if (isEgg == false)
+            {
+                becomeEgg();
+            }
+                else if (isEgg == true)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    print("Scene restarted");
+                    Time.timeScale = 1f;
+                }
+
         }
     }
 

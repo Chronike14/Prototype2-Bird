@@ -7,7 +7,7 @@ public class DestroyOutOfBounds : MonoBehaviour
 
     public Camera MainCamera;
     private Vector2 screenBounds;
-    private float leftSide = -10;
+    private float leftSide;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class DestroyOutOfBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < leftSide)
+        if (transform.position.x < leftSide - 12.0)
         {
             Debug.Log("Game Over!");
             Destroy(gameObject);

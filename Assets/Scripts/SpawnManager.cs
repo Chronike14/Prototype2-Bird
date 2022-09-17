@@ -7,14 +7,16 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject[] obstaclePrefabs;
     public GameObject tree;
-    private float startDelay = 1;
-    public float spawnInterval = 1.5f;
+    public Camera MainCamera;
+    public int seconds = 20;
+    private float startDelay = 0.5f;
+    public float spawnInterval = 1.0f;
     private Vector2 screenBounds;
     private int clock = 0;
 
     void Start()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
         InvokeRepeating("SpawnRandomObstacle", startDelay, spawnInterval);
     }
 
@@ -22,21 +24,23 @@ public class SpawnManager : MonoBehaviour
     void FixedUpdate()
     {
         clock ++;
+        screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
     }
 
     void SpawnRandomObstacle()
     {
-        if (clock <= 1800)
+        if (clock <= seconds * 60)
             {
             int obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
 
             GameObject a = Instantiate(obstaclePrefabs[obstacleIndex]) as GameObject;
-            a.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y, screenBounds.y));
+            a.transform.position = new Vector2(screenBounds.x + 4, Random.Range(-screenBounds.y, screenBounds.y));
             }
-            else if (clock >= 1800)
+            else if (clock >= seconds * 60)
                 {
+                
                 GameObject b = Instantiate(tree) as GameObject;
-                b.transform.position = new Vector2(screenBounds.x * 4, Random.Range(-screenBounds.y, screenBounds.y));
+                b.transform.position = new Vector2(screenBounds.x + 4, screenBounds.y - 6);
                 }
         }
     

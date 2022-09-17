@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DetectCollision : MonoBehaviour
 {
@@ -18,7 +19,13 @@ public class DetectCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            print("Scene restarted");
+            Time.timeScale = 1f;
+        }
     }
 }

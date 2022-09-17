@@ -46,7 +46,7 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         if (gameObject.tag == "Tree") 
         {
             if(eggTime == true) 
@@ -54,7 +54,7 @@ public class MoveForward : MonoBehaviour
                 _rbody.velocity = new Vector3(0, 0, 0);
             }
         }
-        */
+        
     }
 
     void FixedUpdate() 
